@@ -1,5 +1,5 @@
 #banner {
-    background-color: rgb(46, 46, 144);
+    background-color: rgb(61, 61, 173);
     color: white;
     font-size: 30px;
     text-align: center;
@@ -18,10 +18,15 @@ p {
     line-height: 10px;
 }
 
+#snippet {
+    line-height: 20px;
+}
+
 h5 {
     line-height: 10px;
     padding-top: 5px;
 }
+
 
 
 
