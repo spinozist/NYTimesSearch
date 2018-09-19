@@ -1,0 +1,8 @@
+#banner {
+    background-color: rgb(46, 46, 144);
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    padding: 30px 0px 30px 0px;
+    border-radius: 4px;
+}
