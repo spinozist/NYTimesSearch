@@ -2,26 +2,30 @@
 window.onload = function () {
   console.log("window.onload fired");
 
+  var searchInput = "";
+  var beginDate = ""
+  var endDate = "";
+  var articleCount = $(`#num-records`).val(5);
 
-  // var runQuery = function () {
+  $("#clear-button").on("click", function () {
+    $(`#search-term`).val("");;
+    $(`#start-date`).val("");
+    $(`#end-date`).val("");
+    $(`#num-records`).val(5);
+    $(`#search-results`).empty();
+
+  });
 
   $("#search-button").on("click", function () {
-
-    $(`#search-term`).attr(`value`,`Kavanaugh`);
-    $(`#start-date`).attr(`value`,`20180101`);
-    $(`#end-date`).attr(`value`,`20180919`);
-    $(`#num-records`).attr(`value`, 5);
-
     console.log("Button.onload fired");
 
-    var searchInput = $(`#search-term`).val();
-    var beginDate = $(`#start-date`).attr(`value`);
-    var endDate = $(`#end-date`).attr(`value`);
-    var articleCount = $(`#num-records`).attr(`value`);
+    searchInput = $(`#search-term`).val();
+    beginDate = $(`#start-date`).val();
+    endDate = $(`#end-date`).val();
+    articleCount = $(`#num-records`).val();
 
     var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
     url += '?' + $.param({
-
       'api-key': "ebfbeb51a8d54753aeba98515e5eeea9",
       'q': searchInput,
       'begin_date': beginDate,
@@ -52,6 +56,5 @@ window.onload = function () {
 
   });
 };
-// };
 
 

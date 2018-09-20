@@ -6,34 +6,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
         crossorigin="anonymous"></script>
-    <script src="javascript/script.js"></script>
+    <script src="assets/javascript/script.js"></script>
 </head>
 
 <body>
-    <div id="banner">New York Times Search</div>
-    <div id="search-container" class="card hide">
-        <div class="card-header"><h5>Search Parameters</h5></div>
+    <div id="banner"><img src="assets/icons/large-calendar.png" /> New York Times Search</div>
+    <div id="search-container" class="card">
+        <div class="card-header">
+            <h5>Search Parameters</h5>
+        </div>
         <div id="inner-box" class="card-body">
             <p>Search Term:</p>
             <input type="text" class="input-group-text" id="search-term" value=""><br>
             <p>Number of Records to Retreive:</p>
-            <input type="text" id="num-records" class="input-group-text"value="5"><br>
+            <input type="text" id="num-records" class="input-group-text" value=""><br>
             <p>Start Year (optional):</p>
             <input type="text" id="start-date" class="input-group-text" value=""><br>
             <p>End Year (optional):</p>
             <input type="text" id="end-date" class="input-group-text" value=""><br>
-            <button id="search-button">Search</button>
-            <button id="clear-button">Clear Results</button>
+            <button id="search-button" class="btn btn-outline-0">
+                <img src="assets/icons/small-calendar.png" />
+                Search</button>
+            <button id="clear-button" class="btn btn-outline-0">Clear Results</button>
         </div>
-    </div>
-    <div id="result-container" class="card">
-        <div class="card-header"><h5>Top Articles</h5></div>
-        <div id="search-results" class="card-body">
+        <div id="result-container" class="card">
+            <div class="card-header">
+                <h5>Top Articles</h5>
+            </div>
+            <div id="search-results" class="card-body">
+            </div>
         </div>
     </div>
 
