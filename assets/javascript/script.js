@@ -7,19 +7,31 @@ window.onload = function () {
   var endDate = "";
   var articleCount = $(`#num-records`).val(5);
   var sort = "newest";
+  var today = new Date();
+  var yyyy = today.getFullYear();
+  var mm = today.getMonth() + 1;
+  var dd = today.getDate();
 
-  runQuery = function () {
+  if (dd<10) {
+    dd = `0${dd}`
+  };
+
+  if (mm<10) {
+    mm= `0${mm}`
+  };
+
+  var runQuery = function () {
     searchInput = $(`#search-term`).val();
     beginDate = $(`#start-date`).val();
     endDate = $(`#end-date`).val();
     articleCount = $(`#num-records`).val();
 
     if (beginDate === "") {
-      beginDate = 20180101
+      beginDate = `${yyyy}0101`
     };
 
     if (endDate === "") {
-      endDate = 20180920
+      endDate = `${yyyy}${mm}${dd}`
     };
     
 
