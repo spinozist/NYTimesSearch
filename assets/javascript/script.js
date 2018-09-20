@@ -21,6 +21,7 @@ window.onload = function () {
   };
 
   var runQuery = function () {
+    $(`#search-results`).empty();
     searchInput = $(`#search-term`).val();
     beginDate = $(`#start-date`).val();
     endDate = $(`#end-date`).val();
@@ -75,13 +76,11 @@ window.onload = function () {
   });
 
   $("#newest-button").on("click", function () {
-    $(`#search-results`).empty();
     sort = "newest";
     runQuery();
   });
 
   $("#oldest-button").on("click", function () {
-    $(`#search-results`).empty();
     sort = "oldest";
     runQuery();
   });
