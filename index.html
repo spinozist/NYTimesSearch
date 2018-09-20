@@ -26,18 +26,21 @@
             <input type="text" class="input-group-text" id="search-term" value=""><br>
             <p>Number of Records to Retreive:</p>
             <input type="text" id="num-records" class="input-group-text" value=""><br>
-            <p>Start Year (optional):</p>
+            <p>Start Date (optional):</p>
             <input type="text" id="start-date" class="input-group-text" value=""><br>
-            <p>End Year (optional):</p>
+            <p>End Date (optional):</p>
             <input type="text" id="end-date" class="input-group-text" value=""><br>
             <button id="search-button" class="btn btn-outline-0">
                 <img src="assets/icons/small-calendar.png" />
                 Search</button>
-            <button id="clear-button" class="btn btn-outline-0">Clear Results</button>
+            <button id="clear-query" class="btn btn-outline-0">Reset Query</button>
         </div>
         <div id="result-container" class="card">
             <div class="card-header">
                 <h5>Top Articles</h5>
+                <button id="clear-button" class="btn btn-outline-0">Clear Results</button>
+                <button id="newest-button" class="btn btn-outline-0">Newest</button>
+                <button id="oldest-button" class="btn btn-outline-0">Oldest</button>
             </div>
             <div id="search-results" class="card-body">
             </div>

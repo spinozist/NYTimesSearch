@@ -6,23 +6,22 @@ window.onload = function () {
   var beginDate = ""
   var endDate = "";
   var articleCount = $(`#num-records`).val(5);
+  var sort = "newest";
 
-  $("#clear-button").on("click", function () {
-    $(`#search-term`).val("");;
-    $(`#start-date`).val("");
-    $(`#end-date`).val("");
-    $(`#num-records`).val(5);
-    $(`#search-results`).empty();
-
-  });
-
-  $("#search-button").on("click", function () {
-    console.log("Button.onload fired");
-
+  runQuery = function () {
     searchInput = $(`#search-term`).val();
     beginDate = $(`#start-date`).val();
     endDate = $(`#end-date`).val();
     articleCount = $(`#num-records`).val();
+
+    if (beginDate === "") {
+      beginDate = 20180101
+    };
+
+    if (endDate === "") {
+      endDate = 20180920
+    };
+    
 
     var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
     url += '?' + $.param({
@@ -30,7 +29,7 @@ window.onload = function () {
       'q': searchInput,
       'begin_date': beginDate,
       'end_date': endDate,
-      'sort': "newest",
+      'sort': sort,
     });
 
     $.ajax({
@@ -53,8 +52,38 @@ window.onload = function () {
     }).fail(function (err) {
       throw err;
     });
+  }
+
+  $("#clear-query").on("click", function () {
+    $(`#search-term`).val("");;
+    $(`#start-date`).val("");
+    $(`#end-date`).val("");
+    $(`#num-records`).val(5);
+    $(`#search-results`).empty();
+  });
+
+  $("#newest-button").on("click", function () {
+    $(`#search-results`).empty();
+    sort = "newest";
+    runQuery();
+  });
+
+  $("#oldest-button").on("click", function () {
+    $(`#search-results`).empty();
+    sort = "oldest";
+    runQuery();
+  });
+
+  $("#clear-button").on("click", function () {
+    $(`#search-results`).empty();
+  });
+
+  $("#search-button").on("click", function () {
+    console.log("Button.onload fired");
+    runQuery();
 
   });
+
 };
 
 
